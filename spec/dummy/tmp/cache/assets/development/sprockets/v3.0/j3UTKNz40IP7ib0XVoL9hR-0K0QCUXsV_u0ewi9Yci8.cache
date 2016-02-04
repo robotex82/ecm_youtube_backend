@@ -1,0 +1,34 @@
+I"X(function() {
+  $(function() {
+    return $('[data-acts-as-list-item]').each(function() {
+      return $(this).draggable({
+        scope: $(this).attr('data-acts-as-list-item-scope'),
+        revert: true
+      });
+    });
+  });
+
+  $(function() {
+    return $('[data-acts-as-list-item]').each(function() {
+      var authenticity_token, redirect_target;
+      redirect_target = $(this).attr('data-acts-as-list-item-on-drop-target');
+      authenticity_token = $('meta[name="csrf-token"]').attr('content');
+      return $(this).droppable({
+        accept: '.acts-as-list-item',
+        scope: $(this).attr('data-acts-as-list-item-scope'),
+        activeClass: 'btn-success',
+        drop: function(event, ui) {
+          var dropped_element, dropped_element_to_param;
+          dropped_element = $(ui.draggable);
+          dropped_element_to_param = dropped_element.attr('data-acts-as-list-item-uid');
+          return $.redirect(redirect_target, {
+            authenticity_token: authenticity_token,
+            dropped_id: dropped_element_to_param
+          });
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

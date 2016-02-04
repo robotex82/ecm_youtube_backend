@@ -1,0 +1,37 @@
+= Ecm::Youtube::Backend
+
+
+= Prerequisites
+
+  * itsf_backend
+  * ecm_youtube
+
+
+= Installation
+
+Add it to your gemfile:
+
+  # Gemfile
+  gem 'ecm_youtube_backend'
+
+Bundle:
+
+  > bundle install
+
+Generate the initializer:
+
+  > rails g ecm:youtube:backend:install
+
+Add it to the backend:
+
+  # config/initializers/xxx_itsf_backend.rb
+  Itsf::Backend.configure do |config|
+    config.backend_engines = [
+      Ecm::Youtube::Backend::Engine
+    ]
+  end
+
+
+= Running Specs
+
+  ./run_specs.sh

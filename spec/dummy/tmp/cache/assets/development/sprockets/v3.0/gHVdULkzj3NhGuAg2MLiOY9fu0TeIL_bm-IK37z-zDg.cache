@@ -1,0 +1,29 @@
+I"(function() {
+  var timerid;
+
+  timerid = void 0;
+
+  $(function() {
+    return $('[data-auto-submit=true]').keyup(function() {
+      var form;
+      form = this;
+      clearTimeout(timerid);
+      timerid = setTimeout((function() {
+        form.submit();
+      }), 500);
+    });
+  });
+
+  $(function() {
+    return $('[data-auto-submit=true]').change(function() {
+      var form;
+      form = this;
+      clearTimeout(timerid);
+      timerid = setTimeout((function() {
+        form.submit();
+      }), 500);
+    });
+  });
+
+}).call(this);
+:ET

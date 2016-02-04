@@ -1,0 +1,9 @@
+I"¢(function() {
+  $(function() {
+    return $('[data-autofocus=last]').on('focus', function() {
+      return this.value = this.value;
+    });
+  });
+
+}).call(this);
+:ET

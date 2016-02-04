@@ -1,0 +1,40 @@
+defaults:
+  permissions:
+    - ecm/youtube/backend/engine
+    - ecm/youtube/category/index
+    - ecm/youtube/category/show
+    - ecm/youtube/category/new
+    - ecm/youtube/category/create
+    - ecm/youtube/category/edit
+    - ecm/youtube/category/update
+    - ecm/youtube/category/destroy
+    - ecm/youtube/video/index
+    - ecm/youtube/video/show
+    - ecm/youtube/video/new
+    - ecm/youtube/video/create
+    - ecm/youtube/video/edit
+    - ecm/youtube/video/update
+    - ecm/youtube/video/destroy
+  roles:
+    ecm/youtube/administrator:
+      - ecm/youtube/backend/engine
+      - ecm/youtube/category/index
+      - ecm/youtube/category/show
+      - ecm/youtube/category/new
+      - ecm/youtube/category/create
+      - ecm/youtube/category/edit
+      - ecm/youtube/category/update
+      - ecm/youtube/category/destroy
+      - ecm/youtube/video/index
+      - ecm/youtube/video/show
+      - ecm/youtube/video/new
+      - ecm/youtube/video/create
+      - ecm/youtube/video/edit
+      - ecm/youtube/video/update
+      - ecm/youtube/video/destroy
+    ecm/youtube/reviewer:
+      - ecm/youtube/backend/engine
+      - ecm/youtube/category/index
+      - ecm/youtube/category/show
+      - ecm/youtube/video/index
+      - ecm/youtube/video/show

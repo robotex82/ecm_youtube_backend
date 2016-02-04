@@ -1,0 +1,37 @@
+I",(function() {
+  $(function() {
+    return $('textarea[data-add-editor]').each(function() {
+      var div_id, editor, syntax, textarea;
+      textarea = this;
+      div_id = "editor_for_" + ($(textarea).attr('id'));
+      $(textarea).after("<div id=\"" + div_id + "\" class=\"editor\">" + ($(textarea).val()) + "</div>");
+      $(textarea).css('display', 'none');
+      editor = ace.edit("" + div_id);
+      if ($(textarea).is('[data-editor-syntax]')) {
+        syntax = $(textarea).attr('data-editor-syntax');
+        editor.session.setMode("ace/mode/" + syntax);
+      }
+      return editor.on('input', function() {
+        return $(textarea).val(editor.getValue());
+      });
+    });
+  });
+
+  $(function() {
+    return $('pre[data-add-editor]').each(function() {
+      var container, div_id, editor, syntax;
+      container = this;
+      div_id = "editor_for_" + ($(container).attr('id'));
+      $(container).after("<div id=\"" + div_id + "\" class=\"editor\">" + ($(container).html()) + "</div>");
+      $(container).css('display', 'none');
+      editor = ace.edit("" + div_id);
+      if ($(container).is('[data-editor-syntax]')) {
+        syntax = $(container).attr('data-editor-syntax');
+        editor.session.setMode("ace/mode/" + syntax);
+      }
+      return editor.setReadOnly(true);
+    });
+  });
+
+}).call(this);
+:ET

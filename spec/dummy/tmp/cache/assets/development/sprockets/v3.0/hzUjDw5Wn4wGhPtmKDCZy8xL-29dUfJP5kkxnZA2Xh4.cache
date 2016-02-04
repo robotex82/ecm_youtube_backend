@@ -1,0 +1,39 @@
+I"ä(function() {
+  var rotation;
+
+  rotation = function() {
+    $('#navigation-logo > .itsf-logo-38').rotate({
+      angle: 0,
+      animateTo: 360,
+      callback: rotation
+    });
+  };
+
+  $(function() {
+    $('a').click(function() {
+      return rotation();
+    });
+    $('a *').click(function() {
+      return rotation();
+    });
+    $('input[type="submit"]').click(function() {
+      return rotation();
+    });
+    return $('#navigation-logo > .itsf-logo-38').rotate({
+      bind: {
+        mouseover: function() {
+          $(this).rotate({
+            animateTo: 180
+          });
+        },
+        mouseout: function() {
+          $(this).rotate({
+            animateTo: 0
+          });
+        }
+      }
+    });
+  });
+
+}).call(this);
+:ET

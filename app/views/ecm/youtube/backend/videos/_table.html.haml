@@ -1,0 +1,9 @@
+= table.association :category, label_method: :translated_identifier
+= table.column :preview, as: :youtube_video, width: 320, height: 240, aspect_ratio: '4by3'
+= table.column :title, class: 'truncate-chars truncate-chars-30'
+= table.column :description, class: 'truncate-chars truncate-chars-30'
+= table.column :duration, as: :duration
+= table.column :identifier
+= table.timestamps
+= table.acts_as_list_actions scope: 'category_id'
+= table.acts_as_published_actions
