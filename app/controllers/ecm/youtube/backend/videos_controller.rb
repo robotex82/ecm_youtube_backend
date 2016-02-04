@@ -1,4 +1,4 @@
-class Ecm::Youtube::Backend::VideosController < Itsf::Backend::BaseController
+class Ecm::Youtube::Backend::VideosController < Itsf::Backend::Resource::BaseController
   include Controller::ActsAsPublishedConcern
   include Controller::ActsAsListConcern
 
