@@ -1,3 +1,6 @@
 en:
   classes:
     ecm/youtube/backend/engine: 'Youtube'
+  routes:
+    mount:
+      ecm_youtube_backend: '/backend/youtube'
