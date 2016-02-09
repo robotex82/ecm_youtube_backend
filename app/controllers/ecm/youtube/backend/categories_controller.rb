@@ -22,13 +22,13 @@ class Ecm::Youtube::Backend::CategoriesController < Itsf::Backend::Resource::Bas
 
   def permitted_params
     # Set the allowed params, for your create and update methods.
-    # 
+    #
     # Example: params
     #            .require(:category)
     #              .permit(:title, :body)
-    # 
+    #
     params
       .require(:category)
-        .permit(:identifier)
+      .permit(:identifier)
   end
 end

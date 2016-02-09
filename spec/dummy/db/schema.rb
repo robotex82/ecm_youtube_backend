@@ -11,26 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151226191940) do
-
-  create_table "ecm_youtube_categories", force: :cascade do |t|
-    t.string   "identifier"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema.define(version: 20_151_226_191_940) do
+  create_table 'ecm_youtube_categories', force: :cascade do |t|
+    t.string 'identifier'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "ecm_youtube_videos", force: :cascade do |t|
-    t.integer  "category_id"
-    t.string   "identifier"
-    t.datetime "published_at"
-    t.integer  "position"
-    t.string   "title"
-    t.text     "description"
-    t.integer  "duration"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table 'ecm_youtube_videos', force: :cascade do |t|
+    t.integer 'category_id'
+    t.string 'identifier'
+    t.datetime 'published_at'
+    t.integer 'position'
+    t.string 'title'
+    t.text 'description'
+    t.integer 'duration'
+    t.datetime 'created_at',   null: false
+    t.datetime 'updated_at',   null: false
   end
 
-  add_index "ecm_youtube_videos", ["category_id"], name: "index_ecm_youtube_videos_on_category_id"
-
+  add_index 'ecm_youtube_videos', ['category_id'], name: 'index_ecm_youtube_videos_on_category_id'
 end

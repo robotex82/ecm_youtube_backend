@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   localized do
     Itsf::Backend::Configuration.engine_mount_point.call(self, Itsf::Backend::Engine)
     # mount Itsf::Backend::Engine => '/backend'

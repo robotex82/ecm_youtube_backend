@@ -25,13 +25,13 @@ class Ecm::Youtube::Backend::VideosController < Itsf::Backend::Resource::BaseCon
 
   def permitted_params
     # Set the allowed params, for your create and update methods.
-    # 
+    #
     # Example: params
     #            .require(:video)
     #              .permit(:title, :body)
-    # 
+    #
     params
       .require(:video)
-        .permit(:category_id, :identifier, :published)
+      .permit(:category_id, :identifier, :published)
   end
 end

@@ -3,13 +3,13 @@ module Ecm
     module Backend
       module Generators
         class InstallGenerator < Rails::Generators::Base
-          desc "Generates the intializer"
+          desc 'Generates the intializer'
 
-          source_root File.expand_path('../templates', __FILE__) 
-          
+          source_root File.expand_path('../templates', __FILE__)
+
           def generate_initializer
-            copy_file "initializer.rb", "config/initializers/ecm_youtube_backend.rb"
-          end   
+            copy_file 'initializer.rb', 'config/initializers/ecm_youtube_backend.rb'
+          end
 
           def add_to_itsf_backend
             insert_into_itsf_backend_config(Ecm::Youtube::Backend::Engine)
